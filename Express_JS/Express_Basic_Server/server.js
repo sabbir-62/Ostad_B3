@@ -2,30 +2,20 @@ const path = require('path');
 const express = require('express');
 const app = express();
 
-app.use(express.static('public'));
+// app.use(express.static('public'));
 
-app.get("/json", (req,res)=>{
-    res.json({
-        "name": "Sabbir",
-        "age": 23,
-        "dept": "ECE"
-    });
+function validator(req, res, next) {
+    res.send("<h1>Sabbir Hossain</h1>");
+    next();
+};
+
+app.use("/", validator);
+
+app.get("/", (req,res) => {
+
+    console.log("sabbir");
 })
-app.get("/user", (req,res)=>{
-    res.sendFile(path.join(__dirname + "/public/index.html"))
-})
-app.post("/", (req,res)=>{
-    res.send("<h1>Post Method</h1>");
-})
-app.put("/", (req,res)=>{
-    res.send("<h1>Put Method</h1>");
-})
-app.patch("/", (req,res)=>{
-    res.send("<h1>Patch Method</h1>");
-})
-app.delete("/", (req,res)=>{
-    res.send("<h1>Delete Method</h1>");
-})
+
 
 
 app.listen(3000, ()=>{
