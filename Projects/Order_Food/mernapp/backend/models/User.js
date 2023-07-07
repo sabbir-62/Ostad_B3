@@ -41,16 +41,6 @@ const userSchema = new Schema({
             message: "Password {VALUE} is not strong enough"
         }
     },
-    confirmPassword: {
-        type: String,
-        required: [true, "Please confirm your password"],
-        validate: {
-            validator: function(value){
-                return value === this.password;
-            },
-            message: "Password don't match"
-        }
-    },
     date: {
         type: Date,
         default: Date.now
