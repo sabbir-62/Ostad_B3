@@ -22,7 +22,7 @@ const Signup = () => {
         console.log(json)
 
         if (!json.success) {
-            alert("Enter Valid Credentials");
+            alert("Please enter the inputs");
         }
     }
 
@@ -35,7 +35,7 @@ const Signup = () => {
             <div className='container text-light'>
                 <form onSubmit={handleSubmit}>
                     <div className="form-group mt-5 my-2">
-                        <label htmlFor="name" className='form-label'>Name</label>
+                        <label htmlFor="name" className='form-label'>UserName</label>
                         <input type="text" className="form-control" name='name' value={credentials.name} onChange={onChange} placeholder="Enter Name" />
                     </div>
                     <div className="form-group my-2">

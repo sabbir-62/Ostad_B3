@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 const validator = require('validator');
-const {Schema} = mongoose;
+const { Schema } = mongoose;
 
 const userSchema = new Schema({
     name: {
@@ -8,8 +8,7 @@ const userSchema = new Schema({
         required: [true, "Please provide your name"],
         trim: true,
         minLength: [3, "Name must be at least 3 character"],
-        maxLength: [100, "Name is too long"],
-        unique: true
+        maxLength: [100, "Name is too long"]
     },
     location: {
         type: String,
@@ -47,10 +46,10 @@ const userSchema = new Schema({
     }
 
 },
-{
-    timestamps: true,
-    versionKey: false
-});
+    {
+        timestamps: true,
+        versionKey: false
+    });
 
-const userModel= mongoose.model('user', userSchema);
+const userModel = mongoose.model('user', userSchema);
 module.exports = userModel;
