@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 const Signup = () => {
-    const [credentials, setcredentials] = useState({ name: "", location: "", email: "", password: "" })
+    const [credentials, setCredentials] = useState({ name: "", location: "", email: "", password: "" })
+    let navigate = useNavigate();
 
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -22,12 +23,15 @@ const Signup = () => {
         console.log(json)
 
         if (!json.success) {
-            alert("Please enter the inputs");
+            alert("Something went wrong! Please try again");
+        }
+        if (json.success) {
+            navigate('/login');
         }
     }
 
     const onChange = (event) => {
-        setcredentials({ ...credentials, [event.target.name]: event.target.value })
+        setCredentials({ ...credentials, [event.target.name]: event.target.value })
     }
 
     return (

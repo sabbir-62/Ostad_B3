@@ -21,7 +21,7 @@ const Login = () => {
         console.log(json)
 
         if (!json.success) {
-            alert("Please Enter Email and Password");
+            alert("Please Enter Valid Email and Password");
         }
         if (json.success) {
             navigate('/');
