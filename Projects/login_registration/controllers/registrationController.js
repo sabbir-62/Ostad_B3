@@ -28,7 +28,7 @@ exports.login = (req, res) => {
     let UserName = req.body['UserName'];
     let Password = req.body['Password'];
 
-    profileModel.find({UserName:UserName, Password:Password}, (req, res) => {
+    profileModel.find({UserName:UserName, Password:Password}, (err, data) => {
         if(err){
             res.status(404).json({
                 status: "Fail",

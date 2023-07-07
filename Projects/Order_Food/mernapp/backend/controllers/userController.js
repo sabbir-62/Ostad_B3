@@ -21,3 +21,18 @@ exports.createUser = (req, res) => {
         })
     })
 }
+
+exports.getUser = (req, res) => {
+    userModel.find({}).then((data) => {
+       
+        res.status(200).json({
+            status : "success",
+            data: data
+        })
+    }).catch((err) => {
+        res.status(404).json({
+            status: "No user",
+            data: err
+        })
+    })
+}
