@@ -2,6 +2,8 @@
 import Home from './screens/Home';
 import Login from './screens/Login';
 import Signup from './screens/Signup';
+import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
+import '../node_modules/bootstrap/dist/js/bootstrap.bundle.js';
 
 import {
   BrowserRouter as Router,
@@ -9,8 +11,7 @@ import {
   Route
 } from 'react-router-dom';
 
-import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
-import '../node_modules/bootstrap/dist/js/bootstrap.bundle.js';
+
 
 
 function App() {

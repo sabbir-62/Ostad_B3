@@ -24,6 +24,7 @@ const Login = () => {
             alert("Please Enter Valid Email and Password");
         }
         if (json.success) {
+            localStorage.setItem("token", json.token);
             navigate('/');
         }
     }
