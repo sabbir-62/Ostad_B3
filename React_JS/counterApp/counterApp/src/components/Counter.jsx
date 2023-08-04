@@ -23,7 +23,7 @@ const Counter = () => {
                 <div>
                     <input ref={myNumber} className="form-control w-50 my-2" type="number"/>
                 </div>
-                <button onClick={() => {dispatch(setCustom(myNumber.current.value))}} className="btn btn-danger my-2 w-50">Set Number</button>
+                <button onClick={() => {dispatch(setCustom(parseInt(myNumber.current.value)))}} className="btn btn-danger my-2 w-50">Set Number</button>
                </div>
             </div>
             
